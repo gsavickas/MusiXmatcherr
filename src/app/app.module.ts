@@ -29,6 +29,7 @@ import { SortPipePipe } from './sort-pipe.pipe';
     TrackDisplayComponent,
     SortPipePipe
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
