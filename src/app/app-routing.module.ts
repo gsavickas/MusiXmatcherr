@@ -19,11 +19,6 @@ const routes: Routes = [
   
 ];
 
-/* {path: 'todo/:id', component: TodosComponent},
-  {path: 'user/:id', component: UsersComponent, resolve:{userResolver: UserresolverService}},
-  {path: 'home', component: HomeComponent},
-  {path: '**', redirectTo: 'home' } */
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

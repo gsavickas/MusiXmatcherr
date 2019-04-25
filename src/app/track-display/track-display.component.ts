@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayListServiceService } from '../play-list-service.service';
 
 @Component({
   selector: 'app-track-display',
@@ -6,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./track-display.component.scss']
 })
 export class TrackDisplayComponent implements OnInit {
-
-  constructor() { }
-
+  songs: Object[];
+  constructor(private playlistService: PlayListServiceService) { }
+  deleteSong1(){
+    this.playlistService.removeFromPlaylist1(this.songs['id'])
+  }
   ngOnInit() {
   }
 
