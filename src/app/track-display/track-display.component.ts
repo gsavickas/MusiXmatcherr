@@ -7,9 +7,11 @@ import { PlayListServiceService } from '../play-list-service.service';
   styleUrls: ['./track-display.component.scss']
 })
 export class TrackDisplayComponent implements OnInit {
+  songs: Object[];
+  constructor(private playlistService: PlayListServiceService) { }
+  deleteSong(){
 
-  constructor() { }
-
+  }
   ngOnInit() {
   }
 
