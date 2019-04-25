@@ -14,7 +14,7 @@ export class SearchService {
   constructor(private http: HttpClient) { }
 
   getSearchResults(searchQuery: string){
-    this.http.get(`http://api.musixmatch.com/ws/1.1/track.search?q=${searchQuery}&apikey=7d2a2a73f5654da26590892785c1ff47`).pipe(map((res: Object) => res['message'].body.tracklist)).subscribe(res => this.trackList = res);
+    this.http.get(`http://api.musixmatch.com/ws/1.1/artist.search?q_artist=${searchQuery}&page_size=20&apikey=7d2a2a73f5654da26590892785c1ff47`).pipe(map((res: Object) => res['message'].body.tracklist)).subscribe(res => this.trackList = res);
   }
 
   getTracks(){
