@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,9 +15,8 @@ import { RegisterComponent } from './register/register.component';
 import { PlayListDisplayComponent } from './play-list-display/play-list-display.component';
 import { TrackDisplayComponent } from './track-display/track-display.component';
 import { SortPipePipe } from './sort-pipe.pipe';
-
-import { LoginAuthGuardService } from './login-auth-guard.service';
 import { HttpClientModule } from '@angular/common/http';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -30,8 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     PlayListDisplayComponent,
     TrackDisplayComponent,
-    SortPipePipe, 
-    LoginAuthGuardService
+    SortPipePipe
+  
+    
   ],
 
   imports: [
@@ -39,7 +39,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
