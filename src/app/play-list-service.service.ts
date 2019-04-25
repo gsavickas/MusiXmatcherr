@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PlayListServiceService {
-  playlist1: Object[];
-  playlist2: Object[];
+  private playlist1: Object[];
+  private playlist2: Object[];
   private nextID: number = 0;
   constructor() { }
   addToPlaylist1(song){

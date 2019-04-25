@@ -9,8 +9,8 @@ import { PlayListServiceService } from '../play-list-service.service';
 export class TrackDisplayComponent implements OnInit {
   songs: Object[];
   constructor(private playlistService: PlayListServiceService) { }
-  deleteSong(){
-
+  deleteSong1(){
+    this.playlistService.removeFromPlaylist1(this.songs['id'])
   }
   ngOnInit() {
   }
