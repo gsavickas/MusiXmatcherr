@@ -8,8 +8,10 @@ import { PlayListServiceService } from '../play-list-service.service';
 })
 export class TrackDisplayComponent implements OnInit {
   songs: Object[];
-  constructor() { }
+  constructor(private playlistService: PlayListServiceService) { }
+  deleteSong(){
 
+  }
   ngOnInit() {
   }
 
