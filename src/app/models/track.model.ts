@@ -5,5 +5,6 @@ export interface TrackContainer{
 export interface Track{
     track_name: string,
     album_name: string,
-    artist_name: string  
+    artist_name: string,  
+    id?: number
 }
