@@ -15,7 +15,9 @@ import { RegisterComponent } from './register/register.component';
 import { PlayListDisplayComponent } from './play-list-display/play-list-display.component';
 import { TrackDisplayComponent } from './track-display/track-display.component';
 import { SortPipePipe } from './sort-pipe.pipe';
+
 import { LoginAuthGuardService } from './login-auth-guard.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { LoginAuthGuardService } from './login-auth-guard.service';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
