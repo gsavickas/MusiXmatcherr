@@ -1,7 +1,7 @@
 <div class="example-container mat-elevation-z8">
   <mat-table matSort [dataSource]="songs">
 
-    <!-- track Column -->
+    <!-- Track Column -->
     <ng-container matColumnDef="track">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Track </th>
       <td mat-cell *matCellDef="let song"> {{song.name}} </td>
@@ -13,15 +13,15 @@
       <td mat-cell *matCellDef="let song"> {{song.artistName}} </td>
     </ng-container>
 
-    <!--  Column -->
+    <!-- Album Column -->
     <ng-container matColumnDef="album">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Album </th>
       <td mat-cell *matCellDef="let song"> {{song.albumName}} </td>
     </ng-container>
-
+    <!-- Delete Btn -->
     <ng-container matColumnDef="deleteBtn">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Delete </th>
-      <td mat-cell><button (click)='deleteSong1(song.id)'>Delete</button></td>
+      <td mat-cell *matCellDef="let song"><button (click)='deleteSong1(song.id)'>Delete</button></td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
