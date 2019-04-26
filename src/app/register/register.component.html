@@ -1,3 +1,28 @@
-<p>
-  register works!
-</p>
+<form>
+  <label>First Name: </label>
+  <input name="firstName" [(ngModel)]="user.firstName" #name="ngModel" required minlength="4">
+  <div [class.hidden]="name.valid || name.pristine"><div *ngIf="name.errors.required"> Name is required</div>
+   <div *ngIf="name.errors.minlength"> Name must have at least 4 characters</div></div><br>
+
+  <label>Last Name: </label>
+  <input name="lastName" [(ngModel)]="user.lastName" #name="ngModel" required minlength="4">
+  <div [class.hidden]="name.valid || name.pristine"><div *ngIf="name.errors.required"> Name is required</div>
+    <div *ngIf="name.errors.minlength"> Name must have at least 4 characters</div></div><br>
+
+  <label>Username: </label>
+  <input name="userName" [(ngModel)]="user.userName" #name="ngModel" required minlength="4">
+  <div [class.hidden]="name.valid || name.pristine"><div *ngIf="name.errors.required"> Name is required</div>
+    <div *ngIf="name.errors.minlength"> Name must have at least 4 characters</div></div><br>
+
+  <label>Password: </label>
+  <input name="password" [(ngModel)]="user.password" #name="ngModel" required minlength="6" maxlength="20">
+  <div [class.hidden]="name.valid || name.pristine"> <div *ngIf="name.errors.required"> Name is required</div>
+   <div *ngIf="name.errors.required"> Name must have at least 4 characters</div></div><br>
+
+  <label>Password Confirm: </label>
+  <input name="passwordConfirm" [(ngModel)]="user.passwordConfirm" #name="ngModel" required minlength="6" maxlength="20">
+  <div [class.hidden]="name.valid || name.pristine"><div *ngIf="name.errors.required"> Name is required</div>
+    <div *ngIf="passwordConfirm.errors.minlength"> Name musth have at least 4 characters</div></div>
+
+  <button type="submit" (click)="submit($event)"></button>
+</form>
