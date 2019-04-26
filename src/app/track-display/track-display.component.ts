@@ -10,13 +10,15 @@ import { Track } from '../models/track.model';
 export class TrackDisplayComponent implements OnInit {
   songs: Track[];
   constructor(private playlistService: PlayListServiceService) { }
-  deleteSong1(){
-    this.playlistService.removeFromPlaylist1(this.songs['id'])
+
+  deleteSong1(id){
+    this.playlistService.removeFromPlaylist1(this.songs[id])
   }
-  deleteSong2(){
-    this.playlistService.removeFromPlaylist2(this.songs['id'])
+  deleteSong2(id){
+    this.playlistService.removeFromPlaylist2(this.songs[id])
   }
   ngOnInit() {
+    this.songs = JSON.parse(localStorage.getItem('playlist1'));
   }
 
 }
