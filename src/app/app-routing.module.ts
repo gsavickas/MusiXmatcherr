@@ -6,11 +6,12 @@ import { PlayListDisplayComponent } from './play-list-display/play-list-display.
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { TrackDisplayComponent } from './track-display/track-display.component';
+import { SearchComponent } from './search/search.component';
 
 
 
 const routes: Routes = [
-  {path: 'search', component: SearchDisplayComponent, canActivate: [LoginAuthGuardService] },
+  {path: 'search', component: SearchComponent, canActivate: [LoginAuthGuardService] },
   {path: 'login', component: LoginComponent},
   {path: 'playlist', component: PlayListDisplayComponent, canActivate: [LoginAuthGuardService]},
   {path: 'register', component: RegisterComponent},
