@@ -7,8 +7,6 @@ import { ActivatedRouteSnapshot } from '@angular/router';
   providedIn: 'root'
 })
 export class LoginAuthGuardService implements CanActivate {
-  path: ActivatedRouteSnapshot[];
-  route: ActivatedRouteSnapshot;
   constructor(private userService: UserServiceService, private router: Router) { }
   canActivate(): boolean{
     // Need to update function in login service "isLoggedIn"

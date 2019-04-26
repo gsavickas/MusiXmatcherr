@@ -7,14 +7,13 @@ import { ActivatedRouteSnapshot } from '@angular/router';
   providedIn: 'root'
 })
 export class DisableLoginAuthGuardService implements CanActivate {
-  path: ActivatedRouteSnapshot[];
-   route: ActivatedRouteSnapshot;
   constructor(private userService: UserServiceService, private router: Router) { }
     canActivate(): boolean{
-      // if (this.userService.isLoggedIn()){   
-      //   return false;
+      // if (!this.userService.isLoggedIn()){   
+      //   return true;
       // }
-      this.router.navigate(['login']);
-      return true;
+      // // this.router.navigate(['search']);
+      // // return false;
+      return true; // !Get RID of this after finished!
     }
 }
