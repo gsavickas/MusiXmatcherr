@@ -1,3 +1,30 @@
-<p>
-  login works!
-</p>
+<form>
+<br>
+<br>
+<div>
+  <label>User ID</label>
+  <input [(ngModel)]="user.userID" #name="ngModel"
+        required minlength="6" maxLength="20">
+
+  <div [hidden]="name.valid || name.pristine">
+    <div *ngIf="name.errors.required"> Name is required</div>
+    <div *ngIf="name.errors.minLength"> Minimum length is 6</div>
+    <div *ngIf="name.errors.maxLength"> Maximum length is 20></div>
+  </div>
+
+<br>
+<br>
+<div>
+  <label>Password</label>
+  <input [(ngModel)] id="user.password" #name="ngModel"
+        required minlength="6" required maxLength="20">
+
+  <div [hidden]="name.valid || name.pristine">
+    <div *ngIf="password.errors.required"> Name is required.</div>
+    <div *ngIf="password.errors.minLength"> Minimum length is 6</div>
+    <div *ngIf="password.errors.maxLength"> Maximum length is 20</div>
+  </div>
+</div>
+
+<button type="button" onclick="alert('Hello world!')">Sign In</button>
+<button type="button" onclick="alert('Hello world!')">Create Profile</button>
