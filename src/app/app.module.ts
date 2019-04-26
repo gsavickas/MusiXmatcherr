@@ -17,6 +17,7 @@ import { TrackDisplayComponent } from './track-display/track-display.component';
 import { SortPipePipe } from './sort-pipe.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
+import { MatTableModule, MatButtonModule, MatSortModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -40,8 +41,10 @@ import { from } from 'rxjs';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    FormsModule
-    
+    FormsModule,
+    MatTableModule,
+    MatButtonModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { UserServiceService } from './user-service.service';
-import { ActivatedRouteSnapshot } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +16,7 @@ export class LoginAuthGuardService implements CanActivate {
     return false;
   }
 }
+// Is loggedin method for User
 
 /*@Injectable()
     export class AuthGuard implements CanActivate {
