@@ -21,7 +21,7 @@
 
     <ng-container matColumnDef="deleteBtn">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Delete </th>
-      <td mat-cell><button (click)='deleteSong1(song.id)'>Delete</button></td>
+      <td mat-cell *matCellDef="let song"><button (click)='deleteSong1(song.id)'>Delete</button></td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
