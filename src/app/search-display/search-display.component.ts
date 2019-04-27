@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+
+
 
 @Component({
   selector: 'app-search-display',
@@ -6,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-display.component.scss']
 })
 export class SearchDisplayComponent implements OnInit {
+  displayedColumns = ['track', 'artist', 'album'];
 
+  @Input() results;
   constructor() { }
 
   ngOnInit() {

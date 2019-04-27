@@ -1,3 +1,6 @@
-<p>
-  search works!
-</p>
+<input type="text" [(ngModel)]="searchQuery" placeholder="Search">
+
+<button (click)="getSearch()">Search</button>
+
+
+<app-search-display [results]="results"></app-search-display>
