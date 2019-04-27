@@ -18,7 +18,7 @@ export class TrackDisplayComponent implements OnInit {
     this.playlistService.removeFromPlaylist2(this.songs[id])
   }
   ngOnInit() {
-    JSON.parse(localStorage.getItem('playlist1')).subscribe(data => this.songs = data)
+    this.songs = JSON.parse(localStorage.getItem('playlist1'));
   }
 
 }
