@@ -1,30 +1,32 @@
-<form>
-<br>
-<br>
-<div>
-  <label>User ID</label>
-  <input [(ngModel)]="user.userID" #name="ngModel"
-        required minlength="6" maxLength="20">
-
-  <div [hidden]="name.valid || name.pristine">
-    <div *ngIf="name.errors.required"> Name is required</div>
-    <div *ngIf="name.errors.minLength"> Minimum length is 6</div>
-    <div *ngIf="name.errors.maxLength"> Maximum length is 20></div>
+<div class="loginForm">
+  <div class="userId">
+    <mat-form-field>
+    <input type="text" matInput [(ngModel)]="user.userID" #name="ngModel"
+          required minlength="6" maxLength="20" placeholder="User ID">
+    </mat-form-field>
+    <div [hidden]="name.valid || name.pristine">
+      <div *ngIf="name.errors.required"> Name is required</div>
+      <div *ngIf="name.errors.minLength"> Minimum length is 6</div>
+      <div *ngIf="name.errors.maxLength"> Maximum length is 20></div>
+    </div>
+  </div>
+  
+  <div class="password">
+    <mat-form-field>
+    <input type="text" matInput [(ngModel)]="user.password" #name="ngModel"
+          required minlength="6" maxLength="20" placeholder="Password">
+    </mat-form-field>
+    <div [hidden]="name.valid || name.pristine">
+      <div *ngIf="name.errors.required"> Name is required.</div>
+      <div *ngIf="name.errors.minLength"> Minimum length is 6</div>
+      <div *ngIf="name.errors.maxLength"> Maximum length is 20</div>
+    </div>
   </div>
 
-<br>
-<br>
-<div>
-  <label>Password</label>
-  <input [(ngModel)]="user.password" #name="ngModel"
-        required minlength="6" maxLength="20">
+</div>  
 
-  <div [hidden]="name.valid || name.pristine">
-    <div *ngIf="name.errors.required"> Name is required.</div>
-    <div *ngIf="name.errors.minLength"> Minimum length is 6</div>
-    <div *ngIf="name.errors.maxLength"> Maximum length is 20</div>
-  </div>
+<div class="buttonArea">
+<button mat-raised-button color="primary" routerLink="." (click)="alert()">Sign In</button>
+<button mat-raised-button color="warn" routerLink="." (click)="alert(register.component)">Create Profile</button>
 </div>
-
-<button type="button" onclick="alert()">Sign In</button>
-<button type="button" onclick="alert(register.component)">Create Profile</button>
+<div class="footer"></div>
