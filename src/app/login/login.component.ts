@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Button } from 'protractor';
 import { UserServiceService } from '../user-service.service';
-import { LoginComponent } from './login.component'
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +11,7 @@ import { LoginComponent } from './login.component'
 export class LoginComponent implements OnInit {
   User: Object={
     userID: '',
-    password: '',
-    button(click): ''
+    password: ''
   }
   constructor() { }
 
