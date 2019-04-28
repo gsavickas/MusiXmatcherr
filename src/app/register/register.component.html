@@ -16,15 +16,15 @@
 
   <label>Password: </label>
   <input  type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required minlength="6"><br>
-  <div *ngIf="(password.touched || password.valid) && password.errors"> <div [class.hidden]="!password.touched && !password.errors.required"> Name is required</div>
-   <div [class.hidden]="!password.touched && !password.errors.minlength"> Name must have at least 6 characters</div></div><br>
+  <div *ngIf="(password.touched || password.valid) && password.errors"> <div [class.hidden]="!password.touched && !password.errors.required"> Password is required</div>
+   <div [class.hidden]="!password.touched && !password.errors.minlength"> Password must have at least 6 characters</div></div><br>
 
   <label>Password Confirm: </label>
   <input type="password" name="passwordConfirm" [(ngModel)]="user.confirmpasswordConfirm" #confirmpassword="ngModel" required minlength="6"><br>
-  <div *ngIf="(confirmpassword.touched || confirmpassword.valid) && confirmpassword.errors"><div [class.hidden]="!confirmpassword.touched && !confirmpassword.errors.required"> Name is required</div>
-    <div [class.hidden]="!confirmpassword.touched && !passwordConfirm.errors.minlength" > Name musth have at least 6 characters</div></div>
+  <div *ngIf="(confirmpassword.touched || confirmpassword.valid) && confirmpassword.errors"><div [class.hidden]="!confirmpassword.touched && !confirmpassword.errors.required"> Password is required</div>
+    <div [class.hidden]="!confirmpassword.touched && !passwordConfirm.errors.minlength" > Password must have at least 6 characters</div></div>
 
-  <button type="submit" (click)="submit($event)"></button>
+  <button type="submit" (click)="submit($event)">Submit</button>
 </form>
 
 
