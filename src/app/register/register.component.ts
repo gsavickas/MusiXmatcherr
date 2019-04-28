@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-register',
@@ -6,22 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-User: Object= {
-  firstName: "",
-  lastName: "",
-  userName: "",
-  email: "",
-  password: "",
-  passwordConfirm: "",
-
-  submit(e){
-    e.preventDefault()
-    console.log()
-  }
+  user1: User = {
+    firstName: "",
+    lastName: "",
+    userName: "",
+    email: "",
+    password: "",
+    passwordConfirm: ""
+    }
 
 
 
-}
   constructor() { }
 
   ngOnInit() {
