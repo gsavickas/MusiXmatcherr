@@ -1,3 +1,33 @@
-<p>
-  login works!
-</p>
+<app-header></app-header>
+<div class="loginForm">
+  <div class="userId">
+    <mat-form-field>
+    <input type="text" matInput [(ngModel)]="user.userID" #name="ngModel"
+          required minlength="6" maxLength="20" placeholder="User ID">
+    </mat-form-field>
+    <div [hidden]="name.valid || name.pristine">
+      <div *ngIf="name.errors.required"> Name is required</div>
+      <div *ngIf="name.errors.minLength"> Minimum length is 6</div>
+      <div *ngIf="name.errors.maxLength"> Maximum length is 20></div>
+    </div>
+  </div>
+  
+  <div class="password">
+    <mat-form-field>
+    <input type="text" matInput [(ngModel)]="user.password" #name="ngModel"
+          required minlength="6" maxLength="20" placeholder="Password">
+    </mat-form-field>
+    <div [hidden]="name.valid || name.pristine">
+      <div *ngIf="name.errors.required"> Name is required.</div>
+      <div *ngIf="name.errors.minLength"> Minimum length is 6</div>
+      <div *ngIf="name.errors.maxLength"> Maximum length is 20</div>
+    </div>
+  </div>
+
+</div>  
+
+<div class="buttonArea">
+<button mat-raised-button color="primary" routerLink="." (click)="alert()">Sign In</button>
+<button mat-raised-button color="warn" routerLink="." (click)="alert(register.component)">Create Profile</button>
+</div>
+<div class="footer"></div>

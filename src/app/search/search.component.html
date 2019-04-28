@@ -1,6 +1,10 @@
-<input type="text" [(ngModel)]="searchQuery" placeholder="Search">
+<app-nav></app-nav>
+<div class="searchArea">
+<mat-form-field>
+    <input class="searchInput" type="text" [(ngModel)]="searchQuery" matInput placeholder="Search">
+</mat-form-field>
 
-<button (click)="getSearch()">Search</button>
-
+<button class="searchButton" mat-raised-button color="primary" (click)="getSearch()">Search</button>
+</div>
 
 <app-search-display [results]="results"></app-search-display>
