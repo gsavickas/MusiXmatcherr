@@ -7,7 +7,7 @@ import { User } from '../models/user.model';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  user1: User = {
+  user: User = {
     firstName: "",
     lastName: "",
     userName: "",
@@ -15,6 +15,18 @@ export class RegisterComponent implements OnInit {
     password: "",
     passwordConfirm: ""
     }
+
+
+    submit(e){
+      e.preventDefault()
+      
+    }
+
+
+
+
+
+
 
 
 

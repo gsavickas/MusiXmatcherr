@@ -1,28 +1,30 @@
 <form>
   <label>First Name: </label>
-  <input name="firstName" [(ngModel)]="User1.firstName" #name="ngModel" required minlength="4">
-  <div [class.hidden]="name.valid || name.pristine"><div *ngIf="name.errors.required"> Name is required</div>
-   <div *ngIf="name.errors.minlength"> Name must have at least 4 characters</div></div><br>
+  <input type="text" id="firstName" name="firstName"  required minlength="4" [(ngModel)]="user.firstName" #firstName="ngModel"><br>
+  <div *ngIf= "(firstName.touched || firstName.valid) && firstName.errors"> <div [class.hidden]="!firstName.touched && !firstName.errors.required"> Name is required</div>
+   <div [class.hidden]="!firstName.touched && !firstName.errors.minlength"> Name must have at least 4 characters</div></div><br>
 
   <label>Last Name: </label>
-  <input name="lastName" [(ngModel)]="User1.lastName" #name="ngModel" required minlength="4">
-  <div [class.hidden]="name.valid || name.pristine"><div *ngIf="name.errors.required"> Name is required</div>
-    <div *ngIf="name.errors.minlength"> Name must have at least 4 characters</div></div><br>
+  <input name="lastName" [(ngModel)]="user.lastName" #lastname="ngModel" required minlength="4"><br>
+  <div *ngIf="(lastname.touched || lastname.valid) && lastname.errors"> <div [class.hidden]="!lastname.touched && !lastname.errors.required"> Name is required</div>
+    <div [class.hidden]="!lastname.touched && !lastname.errors.minlength"> Name must have at least 4 characters</div></div><br>
 
   <label>Username: </label>
-  <input name="userName" [(ngModel)]="User1.userName" #name="ngModel" required minlength="4">
-  <div [class.hidden]="name.valid || name.pristine"><div *ngIf="name.errors.required"> Name is required</div>
-    <div *ngIf="name.errors.minlength"> Name must have at least 4 characters</div></div><br>
+  <input name="userName" [(ngModel)]="user.userName" #username="ngModel" required minlength="4"><br>
+  <div *ngIf="(username.touched || username.valid) && username.errors"> <div [class.hidden]="!username.touched && !username.errors.required"> Name is required</div>
+    <div [class.hidden]="!username.touched && !username.errors.minlength"> Name must have at least 4 characters</div></div><br>
 
   <label>Password: </label>
-  <input name="password" [(ngModel)]="User1.password" #name="ngModel" required minlength="6" maxlength="20">
-  <div [class.hidden]="name.valid || name.pristine"> <div *ngIf="name.errors.required"> Name is required</div>
-   <div *ngIf="name.errors.required"> Name must have at least 4 characters</div></div><br>
+  <input  type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required minlength="6"><br>
+  <div *ngIf="(password.touched || password.valid) && password.errors"> <div [class.hidden]="!password.touched && !password.errors.required"> Name is required</div>
+   <div [class.hidden]="!password.touched && !password.errors.minlength"> Name must have at least 6 characters</div></div><br>
 
   <label>Password Confirm: </label>
-  <input name="passwordConfirm" [(ngModel)]="User1.passwordConfirm" #name="ngModel" required minlength="6" maxlength="20">
-  <div [class.hidden]="name.valid || name.pristine"><div *ngIf="name.errors.required"> Name is required</div>
-    <div *ngIf="passwordConfirm.errors.minlength"> Name musth have at least 4 characters</div></div>
+  <input type="password" name="passwordConfirm" [(ngModel)]="user.confirmpasswordConfirm" #confirmpassword="ngModel" required minlength="6"><br>
+  <div *ngIf="(confirmpassword.touched || confirmpassword.valid) && confirmpassword.errors"><div [class.hidden]="!confirmpassword.touched && !confirmpassword.errors.required"> Name is required</div>
+    <div [class.hidden]="!confirmpassword.touched && !passwordConfirm.errors.minlength" > Name musth have at least 6 characters</div></div>
 
   <button type="submit" (click)="submit($event)"></button>
 </form>
+
+
