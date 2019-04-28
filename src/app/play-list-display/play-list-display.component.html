@@ -1,7 +1,9 @@
 <app-nav></app-nav>
 <app-search></app-search>
 <div class="playlistDisplay" *ngFor="let playlist of playlists">
-  <div id="{{playlist.id}}" (click)="displayTracks() "> {{playlist.title}} </div>
+  <div id="{{playlist.id}}" (click)="displayTracks() "> 
+    <a routerLinkActive="active" [routerLink]="['/track']">{{playlist.title}}</a>
+  </div>
 </div>
 
 
