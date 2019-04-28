@@ -9,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./search-display.component.scss']
 })
 export class SearchDisplayComponent implements OnInit {
-  displayedColumns = ['track', 'artist', 'album'];
+  displayedColumns = ['fav', 'track', 'artist', 'album'];
 
   @Input() results;
   constructor() { }
