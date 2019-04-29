@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Button } from 'protractor';
 import { UserServiceService } from '../user-service.service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -15,7 +14,13 @@ export class LoginPageComponent implements OnInit {
     password: 'test'
   }
   
-  constructor(private user: User, private router: Router) {
+  invalid:boolean=false;
+
+  constructor(private user: UserServiceService, private router: Router) {
+  }
+
+  login() {
+    console.log("valid")
   }
 
   ngOnInit() {

@@ -4,7 +4,7 @@ import { SearchDisplayComponent } from './search-display/search-display.componen
 import { LoginAuthGuardService } from './login-auth-guard.service';
 import { PlayListDisplayComponent } from './play-list-display/play-list-display.component';
 import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
+import { LoginPageComponent } from './login/login.component';
 import { TrackDisplayComponent } from './track-display/track-display.component';
 import { SearchComponent } from './search/search.component';
 
@@ -12,7 +12,7 @@ import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {path: 'search', component: SearchComponent, canActivate: [LoginAuthGuardService] },
-  {path: 'login', component: LoginComponent},
+  {path: 'login', component: LoginPageComponent},
   {path: 'playlist', component: PlayListDisplayComponent, canActivate: [LoginAuthGuardService]},
   {path: 'register', component: RegisterComponent},
   {path: 'track', component: TrackDisplayComponent, canActivate: [LoginAuthGuardService] },

@@ -10,7 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { SearchComponent } from './search/search.component';
 import { SearchDisplayComponent } from './search-display/search-display.component';
-import { LoginComponent } from './login/login.component';
+import { LoginPageComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PlayListDisplayComponent } from './play-list-display/play-list-display.component';
 import { TrackDisplayComponent } from './track-display/track-display.component';
@@ -26,7 +26,7 @@ import { MatTableModule, MatButtonModule, MatSortModule } from '@angular/materia
     NavComponent,
     SearchComponent,
     SearchDisplayComponent,
-    LoginComponent,
+    LoginPageComponent,
     RegisterComponent,
     PlayListDisplayComponent,
     TrackDisplayComponent,
