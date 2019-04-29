@@ -16,7 +16,7 @@ export class SearchDisplayComponent implements OnInit {
 
   displayedColumns = ['fav', 'name', 'artistName', 'albumName', 'previewURL'];
   audio = new Audio();
-
+  
   @Input() results;
   constructor(private snackBar: MatSnackBar, private favoriteService: FavoriteService) { }
 
