@@ -9,11 +9,11 @@ import { ActivatedRouteSnapshot } from '@angular/router';
 export class DisableLoginAuthGuardService implements CanActivate {
   constructor(private userService: UserServiceService, private router: Router) { }
     canActivate(): boolean{
-      // if (!this.userService.isLoggedIn()){   
-      //   return true;
-      // }
-      // // this.router.navigate(['search']);
-      // // return false;
-      return true; // !Get RID of this after finished!
+      if (!this.userService.isLoggedIn()){   
+        return true;
+      }
+      this.router.navigate(['search']);
+      return false;
+
     }
 }

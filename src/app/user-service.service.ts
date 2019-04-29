@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserServiceService {
-  private user: Object;
+  private passUser: Object; // To be a user object 
   private UserOn: boolean = false;
   constructor() { }
 
@@ -17,10 +17,11 @@ export class UserServiceService {
     {return false}
   }
 
-  logIn(){
-    var UserInstance = localStorage.getItem('user');
-    if (UserInstance == this.user){
+  logIn(user: Object){
+    var userInstance = JSON.parse(localStorage.getItem('passUser'));
+    if (userInstance.userName == user.userName && userInstance.userPassword == this.user.userPassword){
     this.UserOn = true;
+
     }
   }
 
@@ -28,24 +29,8 @@ export class UserServiceService {
     this.UserOn = false;
   }
 
-  regFunction(){
-    localStorage.setItem('user', JSON.stringify(this.user));
+  regFunction(user: Object){
+    localStorage.setItem('passUser', JSON.stringify(this.passUser));
     this.isLoggedIn()
   }
 }
-
-/* 
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-
-@Injectable({
-  providedIn: 'root'
-})
-export class UserserveService {
-
-  constructor(private http: HttpClient) { }
-  getUserById(id: number){
-    return this.http.get(`http://jsonplaceholder.typicode.com/posts/${id}`)
-  }
-}
-*/

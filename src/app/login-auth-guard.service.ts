@@ -9,9 +9,9 @@ export class LoginAuthGuardService implements CanActivate {
   constructor(private userService: UserServiceService, private router: Router) { }
   canActivate(): boolean{
     // Need to update function in login service "isLoggedIn"
-    // if (this.userService.isLoggedIn(){
+   if (this.userService.isLoggedIn()){
       return true;
-    // }
+    }
     this.router.navigate(['login']);
     return false;
   }
