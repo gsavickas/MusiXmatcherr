@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { MatSort, MatSnackBar } from '@angular/material';
 import { SearchComponent } from '../search/search.component';
+import { FavoriteService } from '../favorite.service';
 
 
 
@@ -14,10 +15,10 @@ export class SearchDisplayComponent implements OnInit {
   displayedColumns = ['fav', 'name', 'artistName', 'albumName', 'previewURL'];
 
   @Input() results;
-  constructor(private snackBar: MatSnackBar) { }
+  constructor(private snackBar: MatSnackBar, private favoriteService: FavoriteService) { }
 
-  addToFavorites(){
-    
+  passToFavorites(result){
+    this.favoriteService.addToFavorites(result);
   }
 
   openSnackBar(message: string, action: string){
