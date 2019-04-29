@@ -5,7 +5,7 @@ import { Track } from './models/track.model';
   providedIn: 'root'
 })
 export class FavoriteService {
-  private favorites: Track[];
+  private favorites: Track[] = [];
   private nextID: number = 0;
   constructor() { }
   addToFavorites(song){
