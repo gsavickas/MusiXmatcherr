@@ -5,8 +5,8 @@ import { Track } from './models/track.model';
   providedIn: 'root'
 })
 export class PlayListServiceService {
-  private playlist1: Track[];
-  private playlist2: Track[];
+  private playlist1: Track[] = [];
+  private playlist2: Track[] = [];
   private nextID: number = 0;
   constructor() { }
   addToPlaylist1(song){

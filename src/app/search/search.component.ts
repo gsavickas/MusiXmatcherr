@@ -12,7 +12,7 @@ import { Track } from '../models/track.model';
 export class SearchComponent implements OnInit {
 
   searchQuery: string;
-  results: Track[];
+  results: Track[] = [];
 
   constructor( private searchService: SearchService ) { 
     // this.searchService.getTracks().subscribe(val => this.results = val);
