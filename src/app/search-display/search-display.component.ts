@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { MatSort, MatSnackBar } from '@angular/material';
+import { SearchComponent } from '../search/search.component';
 
 
 
@@ -9,12 +11,25 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./search-display.component.scss']
 })
 export class SearchDisplayComponent implements OnInit {
-  displayedColumns = ['track', 'artist', 'album'];
+  displayedColumns = ['fav', 'name', 'artistName', 'albumName', 'previewURL'];
 
   @Input() results;
-  constructor() { }
+  constructor(private snackBar: MatSnackBar) { }
 
+  addToFavorites(){
+    
+  }
+
+  openSnackBar(message: string, action: string){
+    action = this.results.name;
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
+  }
+
+  @ViewChild(MatSort) sort: MatSort;
   ngOnInit() {
+    this.results.sort = this.sort;
   }
 
 }
