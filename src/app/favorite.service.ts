@@ -6,6 +6,10 @@ import { Track } from './models/track.model';
 })
 export class FavoriteService {
   favorites: Track[] = [];
+
+  playlist1: Track[] = [];
+  playlist2: Track[] = [];
+
   private nextID: number = 0;
   constructor() { }
   addToFavorites(song){
@@ -18,5 +22,19 @@ export class FavoriteService {
   getFromFavorites(){
     var favoriteList = localStorage.getItem('favorites');
     return favoriteList;
+  }
+
+  addToPlaylist(song, playlistId){
+  song['Id'] = this.nextID;
+    this.nextID++;
+    if(playlistId == 1){
+    this.playlist1.push(song);
+    localStorage.setItem('playlist1', JSON.stringify(this.favorites));
+    } if else(playlistId == 2){
+      this.playlist2.push(song);
+      localStorage.setItem('playlist2', JSON.stringify(this.favorites));
+    }
+    console.log(this.playlist1);
+    console.log(this.playlist2)
   }
 }
