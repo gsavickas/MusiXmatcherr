@@ -15,7 +15,7 @@ import { Track } from '../models/track.model';
 export class SearchDisplayComponent implements OnInit {
 
   displayedColumns = ['fav', 'name', 'artistName', 'albumName', 'previewURL'];
-  audio = new Audio();
+  // audio = new Audio();
 
   @Input() results;
   constructor(private snackBar: MatSnackBar, private favoriteService: FavoriteService) { }
@@ -24,14 +24,23 @@ export class SearchDisplayComponent implements OnInit {
     this.favoriteService.addToFavorites(song);
   }
 
-  openSnackBar(message: string, song: Track){
-    this.audio.src = song.previewURL;
-    this.audio.load();
-    this.audio.play();
+  passToPlaylist(song: Track){
+    this.favoriteService.addToPlaylist(song);
+  }
 
-    this.snackBar.open(message, song.name, {
-      duration: 2000,
+  openSnackBar(message: string, song: Track){
+    let audio = new Audio();
+    audio.pause();
+    audio.src = song.previewURL;
+    audio.load();
+    audio.play();
+
+    let snackRef = this.snackBar.open(message, song.name, {
+      duration: 30000,
     });
+
+    snackRef.afterDismissed().subscribe(res => audio.pause());
+
   }
 
   @ViewChild(MatSort) sort: MatSort;
