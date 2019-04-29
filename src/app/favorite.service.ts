@@ -30,7 +30,7 @@ export class FavoriteService {
     if(playlistId == 1){
     this.playlist1.push(song);
     localStorage.setItem('playlist1', JSON.stringify(this.favorites));
-    } if else(playlistId == 2){
+    } else if(playlistId == 2){
       this.playlist2.push(song);
       localStorage.setItem('playlist2', JSON.stringify(this.favorites));
     }
