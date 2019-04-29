@@ -5,7 +5,7 @@ import { Track } from './models/track.model';
   providedIn: 'root'
 })
 export class FavoriteService {
-  private favorites: Track[];
+  favorites: Track[] = [];
   private nextID: number = 0;
   constructor() { }
   addToFavorites(song){
@@ -13,6 +13,7 @@ export class FavoriteService {
     this.nextID++;
     this.favorites.push(song);
     localStorage.setItem('favorites', JSON.stringify(this.favorites));
+    console.log(this.favorites);
   }
   getFromFavorites(){
     var favoriteList = localStorage.getItem('favorites');

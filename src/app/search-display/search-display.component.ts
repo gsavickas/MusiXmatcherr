@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { MatSort, MatSnackBar } from '@angular/material';
 import { SearchComponent } from '../search/search.component';
 import { FavoriteService } from '../favorite.service';
+import { Track } from '../models/track.model';
 
 
 
@@ -12,18 +13,23 @@ import { FavoriteService } from '../favorite.service';
   styleUrls: ['./search-display.component.scss']
 })
 export class SearchDisplayComponent implements OnInit {
+
   displayedColumns = ['fav', 'name', 'artistName', 'albumName', 'previewURL'];
+  audio = new Audio();
 
   @Input() results;
   constructor(private snackBar: MatSnackBar, private favoriteService: FavoriteService) { }
 
-  passToFavorites(result){
-    this.favoriteService.addToFavorites(result);
+  passToFavorites(song: Track){
+    this.favoriteService.addToFavorites(song);
   }
 
-  openSnackBar(message: string, action: string){
-    action = this.results.name;
-    this.snackBar.open(message, action, {
+  openSnackBar(message: string, song: Track){
+    this.audio.src = song.previewURL;
+    this.audio.load();
+    this.audio.play();
+
+    this.snackBar.open(message, song.name, {
       duration: 2000,
     });
   }

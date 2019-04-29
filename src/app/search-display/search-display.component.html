@@ -35,7 +35,7 @@
       <ng-container matColumnDef="previewURL">
           <mat-header-cell class="tableHeader" *matHeaderCellDef> Preview </mat-header-cell>
           <mat-cell *matCellDef="let result">
-            <button mat-icon-button (click)="openSnackBar('Now Playing')"><mat-icon>play_circle_filled</mat-icon></button>
+            <button mat-icon-button (click)="openSnackBar('Now Playing', result)"><mat-icon>play_circle_filled</mat-icon></button>
           </mat-cell>
       </ng-container>
 
