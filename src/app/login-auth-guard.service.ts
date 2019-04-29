@@ -17,15 +17,3 @@ export class LoginAuthGuardService implements CanActivate {
   }
 }
 // Is loggedin method for User
-
-/*@Injectable()
-    export class AuthGuard implements CanActivate {
-    constructor(userService: OurUserService, private router: Router) {}
-        canActivate(): boolean {
-            if(this.userService.isLoggedIn){
-                return true;
-            }
-            this.router.navigate(['/login']);
-            return false;
-        }
-    } */
