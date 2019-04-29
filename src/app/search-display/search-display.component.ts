@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { MatSort, MatSnackBar } from '@angular/material';
+import { Component, OnInit, Input, ViewChild, Inject } from '@angular/core';
+import { MatSort, MatSnackBar, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { SearchComponent } from '../search/search.component';
 import { FavoriteService } from '../favorite.service';
 import { Track } from '../models/track.model';
@@ -14,18 +14,32 @@ import { Track } from '../models/track.model';
 })
 export class SearchDisplayComponent implements OnInit {
 
-  displayedColumns = ['fav', 'name', 'artistName', 'albumName', 'previewURL'];
-  // audio = new Audio();
+  displayedColumns = ['fav', 'add', 'name', 'artistName', 'albumName', 'previewURL'];
+  track: Track;
+  
 
   @Input() results;
-  constructor(private snackBar: MatSnackBar, private favoriteService: FavoriteService) { }
+  constructor(private snackBar: MatSnackBar,
+    private favoriteService: FavoriteService,
+    public dialog: MatDialog) { }
 
   passToFavorites(song: Track){
     this.favoriteService.addToFavorites(song);
   }
 
-  passToPlaylist(song: Track){
-    this.favoriteService.addToPlaylist(song);
+  passToPlaylist(playlistID: number){
+    this.favoriteService.addToPlaylist(this.track, playlistID);
+  }
+
+  openDialog(song: Track): void {
+    this.track = song;
+    let dialogRef = this.dialog.open(PlaylistDialog, {
+      width: '250px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
   openSnackBar(message: string, song: Track){
@@ -46,6 +60,22 @@ export class SearchDisplayComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   ngOnInit() {
     this.results.sort = this.sort;
+  }
+
+}
+
+@Component({
+  selector: 'playlist-dialog',
+  templateUrl: 'playlist-dialog.html',
+})
+export class PlaylistDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<PlaylistDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: any) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }
