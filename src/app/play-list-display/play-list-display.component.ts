@@ -7,18 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayListDisplayComponent implements OnInit {
 
-playlists: Object[]=[
+playlists = [
   {title: "Coding Beats", id: 1},
-  {title: "Cooking Music", id: 2}
+  {title: "Cooking Music", id: 2},
+  {title: "Study Sounds", id: 3}
 ]
 
-  constructor() { }
+displayedColumns = ['id', 'title', 'delete'];
 
-  ngOnInit() {
+  constructor() {}
+
+  ngOnInit() {}
+
+  displayTracks() {
+    console.log('click works for displayTracks function')
   }
 
-  displayTracks(){
-    console.log('click works for displayTracks function')
+  deletePlaylist(){
+    console.log('button works')
   }
 
 }
