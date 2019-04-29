@@ -13,7 +13,7 @@ playlists = [
   {title: "Study Sounds", id: 3}
 ]
 
-displayedColumns = ['id', 'title', 'delete'];
+displayedColumns = ['id', 'title'];
 
   constructor() {}
 
