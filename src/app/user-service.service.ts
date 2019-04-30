@@ -16,11 +16,11 @@ export class UserServiceService {
     return this.UserOn;
   }
 
-  logIn(user: User){
+  logIn(userName: string, pass: string){
     var userInstance = JSON.parse(localStorage.getItem('passUser'));
-    if (userInstance.userName == user.userName && userInstance.password == user.password){
+    if (userInstance.userName == userName && userInstance.password == pass){
     this.UserOn = true;
-    this.router.navigate(['/search']);
+    this.router.navigate(['search']);
     return true;
     }
     return false;
@@ -30,8 +30,9 @@ export class UserServiceService {
     this.UserOn = false;
   }
 
-  regFunction(user: User){
+  registerSubmit(user: User){
     localStorage.setItem('passUser', JSON.stringify(this.passUser));
-    this.isLoggedIn()
+    this.UserOn = true;
+    this.router.navigate(['search'])
   }
 }
