@@ -34,9 +34,7 @@ export class SearchDisplayComponent implements OnInit {
       duration: 2000,
     });
   }
-  favoriteDataSource(res){
-    console.log(res)
-  }
+
   @ViewChild(MatSort) sort: MatSort;
   ngOnInit() {
     this.results.sort = this.sort;
