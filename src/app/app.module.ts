@@ -9,7 +9,7 @@ import { MaterialModule } from './material.module';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { SearchComponent } from './search/search.component';
-import { SearchDisplayComponent } from './search-display/search-display.component';
+import { SearchDisplayComponent, PlaylistDialog } from './search-display/search-display.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PlayListDisplayComponent } from './play-list-display/play-list-display.component';
@@ -17,7 +17,7 @@ import { TrackDisplayComponent } from './track-display/track-display.component';
 import { SortPipePipe } from './sort-pipe.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
-import { MatTableModule, MatButtonModule, MatSortModule, MatFormFieldModule, MatIconModule, MatSnackBarModule } from '@angular/material';
+import { MatTableModule, MatButtonModule, MatSortModule, MatFormFieldModule, MatIconModule, MatSnackBarModule, MatBottomSheetModule, MatDialogModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { MatTableModule, MatButtonModule, MatSortModule, MatFormFieldModule, Mat
     RegisterComponent,
     PlayListDisplayComponent,
     TrackDisplayComponent,
-    SortPipePipe
+    SortPipePipe,
+    PlaylistDialog
     
   ],
 
@@ -46,9 +47,12 @@ import { MatTableModule, MatButtonModule, MatSortModule, MatFormFieldModule, Mat
     MatSortModule,
     MatFormFieldModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatBottomSheetModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PlaylistDialog]
 })
 export class AppModule { }
