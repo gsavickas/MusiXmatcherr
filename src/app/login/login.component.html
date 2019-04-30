@@ -1,5 +1,27 @@
 <app-header></app-header>
+
 <div class="loginForm">
+
+    <mat-form-field>
+      <input type="text" matInput placeholder="User ID">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="text" matInput placeholder="Password">
+    </mat-form-field>
+
+</div>
+
+<div class="buttonArea">
+    <button mat-raised-button color="primary" (click)="alert()">Sign In</button>
+    <button mat-raised-button color="warn" routerLink=".">Create Profile</button>
+</div>
+
+<div class="footer"></div>
+
+  
+
+<!-- <div class="loginForm">
   <div class="userId">
     <mat-form-field>
     <input type="text" matInput [(ngModel)]="user.userID" #name="ngModel"
@@ -30,4 +52,4 @@
 <button mat-raised-button color="primary" routerLink="." (click)="alert()">Sign In</button>
 <button mat-raised-button color="warn" routerLink="." (click)="alert(register.component)">Create Profile</button>
 </div>
-<div class="footer"></div>
+<div class="footer"></div> -->
