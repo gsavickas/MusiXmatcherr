@@ -19,8 +19,7 @@ export class SearchComponent implements OnInit {
   }
 
   getSearch(){
-    this.searchService.getSearchResults(this.searchQuery).subscribe(res => this.results = res);
-    this.curDataSource = this.results;
+    this.searchService.getSearchResults(this.searchQuery).subscribe(res => {this.results = res;this.curDataSource=res;});
   }
 
   ngOnInit() {
