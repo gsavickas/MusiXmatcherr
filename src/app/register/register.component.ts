@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user.model';
 import { UserServiceService } from '../user-service.service';
 
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -14,8 +16,9 @@ export class RegisterComponent implements OnInit {
     userName: "",
     email: "",
     password: "",
-    passwordConfirm: ""
-    }
+
+     }
+    passwordConfirm: "string"
 
 
     submit(e){
@@ -25,8 +28,11 @@ export class RegisterComponent implements OnInit {
 
 constructor(private userService: UserServiceService) { }
 
+// user: User
+
+
 registerSubmit(){
-  console.log("valid form")
+  this.userService registerSubmit(this.user)
 }
 
   ngOnInit() {

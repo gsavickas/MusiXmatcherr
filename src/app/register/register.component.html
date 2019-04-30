@@ -30,7 +30,7 @@
   </div><br>
 
   <label>Password Confirm: </label>
-  <input type="password" name="passwordConfirm" [(ngModel)]="user.confirmpasswordConfirm" #confirmpassword="ngModel"
+  <input type="password" name="passwordConfirm" [(ngModel)]="user.passwordConfirm" #confirmpassword="ngModel"
     required minlength="6"><br>
   <div *ngIf="(confirmpassword.touched || confirmpassword.valid) && confirmpassword.errors">
     <div [class.hidden]="!(confirmpassword.touched && confirmpassword.errors.required)"> Password is required</div>
