@@ -32,7 +32,7 @@ constructor(private userService: UserServiceService) { }
 
 
 registerSubmit(){
-  this.userService registerSubmit(this.user)
+  this.userService.registerSubmit(this.user)
 }
 
   ngOnInit() {
