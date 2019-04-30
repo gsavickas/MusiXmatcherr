@@ -8,22 +8,16 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginPageComponent implements OnInit {  }
+export class LoginPageComponent implements OnInit {  
   
-  invalid:boolean=false;
+  invalid: boolean= false;
+  userID: string;
+  password: string;
 
   constructor(private user: UserServiceService, private router: Router) {}
 
-  logIn(userID, password)
-
-  registerSubmit(userID, password)
-
-  userID: string;
-  password: string;
-  invalid:boolean;
-
   logIn() {
-    this.invalid = this.loginService.logIn(this.userID, this.password)
+    this.invalid = this.UserService.logIn(this.userID, this.password)
   }
 
   ngOnInit() {

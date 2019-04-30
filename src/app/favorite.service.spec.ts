@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AddFavServiceService } from './add-fav-service.service';
+import { FavoriteService } from './favorite.service';
 
-describe('AddFavServiceService', () => {
+describe('FavoriteService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: AddFavServiceService = TestBed.get(AddFavServiceService);
+    const service: FavoriteService = TestBed.get(FavoriteService);
     expect(service).toBeTruthy();
   });
 });

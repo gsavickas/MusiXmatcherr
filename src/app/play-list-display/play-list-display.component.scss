@@ -1,0 +1,19 @@
+
+.playlistDisplay{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    flex-basis: 100%;
+}
+
+tr:hover{
+    background-color: rgb(41, 41, 41);
+}
+
+button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

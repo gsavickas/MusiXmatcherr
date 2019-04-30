@@ -9,15 +9,20 @@ import { MaterialModule } from './material.module';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { SearchComponent } from './search/search.component';
+<<<<<<< HEAD
 import { SearchDisplayComponent } from './search-display/search-display.component';
 import { LoginPageComponent } from './login/login.component';
+=======
+import { SearchDisplayComponent, PlaylistDialog } from './search-display/search-display.component';
+import { LoginComponent } from './login/login.component';
+>>>>>>> 147f4f636b0c6148603782eb52195b0646af1a62
 import { RegisterComponent } from './register/register.component';
 import { PlayListDisplayComponent } from './play-list-display/play-list-display.component';
 import { TrackDisplayComponent } from './track-display/track-display.component';
 import { SortPipePipe } from './sort-pipe.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
-import { MatTableModule, MatButtonModule, MatSortModule } from '@angular/material';
+import { MatTableModule, MatButtonModule, MatSortModule, MatFormFieldModule, MatIconModule, MatSnackBarModule, MatBottomSheetModule, MatDialogModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -30,8 +35,8 @@ import { MatTableModule, MatButtonModule, MatSortModule } from '@angular/materia
     RegisterComponent,
     PlayListDisplayComponent,
     TrackDisplayComponent,
-    SortPipePipe
-  
+    SortPipePipe,
+    PlaylistDialog
     
   ],
 
@@ -44,9 +49,15 @@ import { MatTableModule, MatButtonModule, MatSortModule } from '@angular/materia
     FormsModule,
     MatTableModule,
     MatButtonModule,
-    MatSortModule
+    MatSortModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatSnackBarModule,
+    MatBottomSheetModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PlaylistDialog]
 })
 export class AppModule { }

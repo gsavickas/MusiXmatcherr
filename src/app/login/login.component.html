@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <form #f="ngForm" (ngSubmit)="f.form.valid && login()">
   <br>
   <br>
@@ -27,3 +28,60 @@
 
 
 <button type="button" [routerLink]="['/register']">Create Profile</button>
+=======
+<app-header></app-header>
+
+<div class="loginForm">
+
+    <mat-form-field>
+      <input type="text" matInput placeholder="User ID">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="text" matInput placeholder="Password">
+    </mat-form-field>
+
+</div>
+
+<div class="buttonArea">
+    <button mat-raised-button color="primary" (click)="alert()">Sign In</button>
+    <button mat-raised-button color="warn" routerLink=".">Create Profile</button>
+</div>
+
+<div class="footer"></div>
+
+  
+
+<!-- <div class="loginForm">
+  <div class="userId">
+    <mat-form-field>
+    <input type="text" matInput [(ngModel)]="user.userID" #name="ngModel"
+          required minlength="6" maxLength="20" placeholder="User ID">
+    </mat-form-field>
+    <div [hidden]="name.valid || name.pristine">
+      <div *ngIf="name.errors.required"> Name is required</div>
+      <div *ngIf="name.errors.minLength"> Minimum length is 6</div>
+      <div *ngIf="name.errors.maxLength"> Maximum length is 20></div>
+    </div>
+  </div>
+  
+  <div class="password">
+    <mat-form-field>
+    <input type="text" matInput [(ngModel)]="user.password" #name="ngModel"
+          required minlength="6" maxLength="20" placeholder="Password">
+    </mat-form-field>
+    <div [hidden]="name.valid || name.pristine">
+      <div *ngIf="name.errors.required"> Name is required.</div>
+      <div *ngIf="name.errors.minLength"> Minimum length is 6</div>
+      <div *ngIf="name.errors.maxLength"> Maximum length is 20</div>
+    </div>
+  </div>
+
+</div>  
+
+<div class="buttonArea">
+<button mat-raised-button color="primary" routerLink="." (click)="alert()">Sign In</button>
+<button mat-raised-button color="warn" routerLink="." (click)="alert(register.component)">Create Profile</button>
+</div>
+<div class="footer"></div> -->
+>>>>>>> 147f4f636b0c6148603782eb52195b0646af1a62
