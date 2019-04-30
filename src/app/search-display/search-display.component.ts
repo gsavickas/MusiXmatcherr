@@ -15,8 +15,6 @@ import { Track } from '../models/track.model';
 export class SearchDisplayComponent implements OnInit {
 
   displayedColumns = ['fav', 'add', 'name', 'artistName', 'albumName', 'previewURL'];
-  track: Track;
-  
 
   @Input() results;
   constructor(private snackBar: MatSnackBar,
@@ -27,14 +25,10 @@ export class SearchDisplayComponent implements OnInit {
     this.favoriteService.addToFavorites(song);
   }
 
-  passToPlaylist(playlistID: number){
-    this.favoriteService.addToPlaylist(this.track, playlistID);
-  }
-
   openDialog(song: Track): void {
-    this.track = song;
     let dialogRef = this.dialog.open(PlaylistDialog, {
       width: '250px',
+      data: song
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -68,14 +62,21 @@ export class SearchDisplayComponent implements OnInit {
   selector: 'playlist-dialog',
   templateUrl: 'playlist-dialog.html',
 })
+
 export class PlaylistDialog {
 
   constructor(
+    private favoriteService: FavoriteService,
     public dialogRef: MatDialogRef<PlaylistDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any) {}
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  passToPlaylist(playlistID: number){
+
+    this.favoriteService.addToPlaylist(this.data, playlistID);
   }
 
 }

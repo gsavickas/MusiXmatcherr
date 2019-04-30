@@ -1,5 +1,6 @@
 <div mat-dialog-actions>
-    <h1>Choose a playlist to add the track to:</h1>
-    <button mat-button (click)="passToPlaylist('1')">Playlist 1</button>
-    <button mat-button (click)="passToPlaylist('2')">Playlist 2</button>
+    <h3>Choose a playlist to add the track to:</h3>
+    <button mat-button (click)="passToPlaylist('1')" [mat-dialog-close]>Playlist 1</button>
+    <button mat-button (click)="passToPlaylist('2')" [mat-dialog-close]>Playlist 2</button>
+    <button mat-button (click)="onNoClick()" cdkFocusInitial>Nevermind...</button>
 </div>

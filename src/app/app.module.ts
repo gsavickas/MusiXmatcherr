@@ -9,7 +9,7 @@ import { MaterialModule } from './material.module';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { SearchComponent } from './search/search.component';
-import { SearchDisplayComponent } from './search-display/search-display.component';
+import { SearchDisplayComponent, PlaylistDialog } from './search-display/search-display.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PlayListDisplayComponent } from './play-list-display/play-list-display.component';
@@ -30,7 +30,8 @@ import { MatTableModule, MatButtonModule, MatSortModule, MatFormFieldModule, Mat
     RegisterComponent,
     PlayListDisplayComponent,
     TrackDisplayComponent,
-    SortPipePipe
+    SortPipePipe,
+    PlaylistDialog
     
   ],
 
@@ -51,6 +52,7 @@ import { MatTableModule, MatButtonModule, MatSortModule, MatFormFieldModule, Mat
     MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PlaylistDialog]
 })
 export class AppModule { }
